@@ -11,8 +11,7 @@ This is a basic to advanced tutorial to N ways to offload C code:
 # Building and Running the Application
  - Laplace 
 
-''' bash
-
+```c
 while ( error > tol && iter < iter_max ) {
 error=0.0;
 for( int j = 1; j < n-1; j++) {
@@ -29,15 +28,13 @@ A[j][i] = Anew[j][i];
 }
 iter++;
 }
+```
 
-'''
-
-''' bash
+```c
 git  clone git@github.com:nzeal/nwaysgpu.git
 cd nwaysgpu
 git fetch --all
 git checkout $NWAYS
 make
 make run
-
-'''
+```
