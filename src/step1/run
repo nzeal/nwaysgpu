@@ -1,0 +1,29 @@
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=4
+#SBATCH --gres=gpu:1
+##SBATCH --mem=83GB
+#SBATCH --time=0:10:00
+#SBATCH --account=cin_staff # account number
+#SBATCH --partition=boost_usr_prod
+
+# Load the necessary module
+module load nvhpc
+
+# Define the directory containing the executable
+DIR=nwaysgpu
+
+# Navigate to the directory
+cd $DIR || { echo "Failed to change directory to $DIR"; exit 1; }
+
+# Execute the program
+./laplace2d
+
+# Check if the program executed successfully
+if [ $? -ne 0 ]; then
+    echo "Execution failed"
+    exit 1
+fi
+
+echo "Execution completed successfully"
