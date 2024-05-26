@@ -9,5 +9,5 @@ Jacobi relaxation Calculation: 4096 x 4096 mesh
   800, 0.00030249
   900, 0.00026885
  1000, 0.00024193
-Elapsed time (s) = 37.66
+Elapsed time (s) = 37.57
 Stopped at iteration: 1000
